@@ -8,7 +8,7 @@ AWS EC2 Managing Django API for Janus Server
 | `admin/` | 관리자 페이지 | GET |
 | `room/make?room_name=[your room name, anything is ok]&room_code=[your room code, must be unique]` | Room 생성(새로운 aws instance) | GET |
 | `room/get/<room_code>` | aws instance 의 주소를 얻기 | GET |
-| `room/run/<room_code>` | aws instance 의 janus server 실행 | GET |
+| `room/run/<room_code>` | aws instance 의 janus server 실행(instance를 생성하는데 시간이 걸리기 때문에 생성 후 3분 정도는 기다렸다가 실행시키는 것이 좋음) | GET |
 | `room/close/<room_code>` | aws instnace 를 종료시키기(계정당 instnace 개수 제한이 있고 돈이 들기에 반드시 사용이 끝난 후 종료시켜야함 ) | GET |
 
 ## How to run
