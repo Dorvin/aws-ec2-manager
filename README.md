@@ -1,4 +1,6 @@
-#AWS EC2 Managing Django API for Janus Server
+
+AWS EC2 Managing Django API for Janus Server
+=====================
 
 ## API guide
 | path | function | method |
@@ -21,6 +23,6 @@
     - [aws 공식 문서 참고](https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-chap-configure.html)
 1. ssh 보안 설정
     - your_key_name.pem 파일을 instancemaker/your_key_name.pem 에 위치시키기
-    - 8088 이외에 다른 필요한 포트가 있다면 필요한 포트들이 열려있는 보안그룹 생성(이하 yourSG)
+    - 8088이 열려있는(, 이외에 다른 필요한 포트들이 있다면, 그들 또한 열려있는) 보안그룹 생성(이하 yourSG)
 1. 코드 수정
     - views.py를 주석에 따라 수정
