@@ -23,6 +23,9 @@ def newRoom(request):
         'sg-0f2a72eef89002c5d',
     ],
     )
+    # Replace KeyName with your_key_name
+    # Replace SecurityGroupIds with yourSG's ID
+
     room.instance_id = instances[0].instance_id
     room.save()
     return HttpResponse("making new aws instance!!!")
@@ -59,18 +62,10 @@ def runRoom(request, room_code):
     if ec2instance.public_ip_address is not None:
         room.server_ip = ec2instance.public_ip_address
         room.save()
-    # testCode = subprocess.call("ssh -i test.pem ubuntu@"+str(room.server_ip), shell=True)
-    # if str(testCode) == "0":
-    #     subprocess.call("yes")
-    #     subprocess.call("cd moduflip-janus")
-    #     subprocess.call("sudo DOCKER_IP="+str(room.server_ip)+" docker-compose up")
-    #     subprocess.call("exit")
-    #     return HttpResponse(str(room.server_ip)+" is running now!!!")
-    # else:
-    #     return HttpResponse("failed to run janus server")
     try:
         print("finding key...")
         cert = paramiko.RSAKey.from_private_key_file("/Users/hyeon/snatcherai/djangoPrac/awsmanager/instancemaker/test.pem")
+        #Replace key file's path with your_key_name.pem's path
         print("key is found!")
         c = paramiko.SSHClient()
         c.set_missing_host_key_policy(paramiko.AutoAddPolicy())
