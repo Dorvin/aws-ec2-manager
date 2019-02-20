@@ -26,3 +26,7 @@ AWS EC2 Managing Django API for Janus Server
     - 8088이 열려있는(, 이외에 다른 필요한 포트들이 있다면, 그들 또한 열려있는) 보안그룹 생성(이하 yourSG)
 1. 코드 수정
     - views.py를 주석에 따라 수정
+1. 서버 실행
+    ```
+    python3 manage.py runserver
+    ```
