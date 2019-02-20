@@ -5,7 +5,7 @@ AWS EC2 Managing Django API for Janus Server
 ## API guide
 | path | function | method |
 |:---|:---:|---:|
-| `admin/` | 관리자 페이지 | GET|
+| `admin/` | 관리자 페이지 | GET |
 | `room/make?room_name=[your room name, anything is ok]&room_code=[your room code, must be unique]` | Room 생성(새로운 aws instance) | GET |
 | `room/get/<room_code>` | aws instance 의 주소를 얻기 | GET |
 | `room/run/<room_code>` | aws instance 의 janus server 실행 | GET |
